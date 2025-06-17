@@ -1,13 +1,13 @@
-import type React from 'react';
-import { createRef, useMemo, useRef } from 'react';
-
 import { useEventListener } from '@/app/hooks';
 import { MenuChannels } from '@/channels/menuChannels';
 import { fixAcceleratorText } from '@/menu/accelerators';
 import menuList from '@/menu/appMenu';
 import appLogo from 'assets/icons/icon.png';
 
-export default function Menu() {
+import { createRef, useMemo, useRef } from 'react';
+import type React from 'react';
+
+export default function Menu () {
   const activeMenuIndex = useRef<number | null>(null);
   const menusRef = useMemo(() => menuList.map(() => createRef<HTMLDivElement>()), []);
 
@@ -33,7 +33,7 @@ export default function Menu() {
 
   const showMenu = (
     index: number,
-    e: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>,
+    e: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>
   ) => {
     e.stopPropagation();
     e.preventDefault();
@@ -91,18 +91,18 @@ export default function Menu() {
   };
 
   return (
-    <section className="window-titlebar-menu">
+    <section className='window-titlebar-menu'>
       {/* Titlebar icon */}
-      <section className="window-titlebar-icon">
-        <img src={appLogo} alt="App logo" />
+      <section className='window-titlebar-icon'>
+        <img src={appLogo} alt='App logo' />
       </section>
 
       {menuList.map(({ label, submenu }, menuIndex) => {
         return (
-          <div className="menu-item" key={`menu_${menuIndex + 1}`}>
+          <div className='menu-item' key={`menu_${menuIndex + 1}`}>
             <button
-              className="menu-title"
-              type="button"
+              className='menu-title'
+              type='button'
               tabIndex={0}
               onClick={(e) => showMenu(menuIndex, e)}
               onKeyDown={(e) => showMenu(menuIndex, e)}
@@ -112,14 +112,14 @@ export default function Menu() {
             >
               {label}
             </button>
-            <div className="menu-popup" ref={menusRef[menuIndex]}>
+            <div className='menu-popup' ref={menusRef[menuIndex]}>
               {Array.isArray(submenu) &&
                 submenu.map((menuItem, menuItemIndex) => {
                   if (menuItem.type === 'separator') {
                     return (
                       <div
                         key={`menu_${menuIndex}_popup_item_${menuItemIndex + 1}`}
-                        className="popup-item-separator"
+                        className='popup-item-separator'
                       />
                     );
                   }
@@ -127,15 +127,15 @@ export default function Menu() {
                   return (
                     <button
                       key={`menu_${menuIndex}_popup_item_${menuItemIndex + 1}`}
-                      className="menu-popup-item"
+                      className='menu-popup-item'
                       onMouseDown={(e) => e.preventDefault()}
                       onKeyDown={(e) => e.preventDefault()}
-                      type="button"
+                      type='button'
                       tabIndex={0}
                       onClick={() => handleAction(menuItem)}
                     >
-                      <div className="popup-item-name">{menuItem.label}</div>
-                      <div className="popup-item-shortcut">{renderItemAccelerator(menuItem)}</div>
+                      <div className='popup-item-name'>{menuItem.label}</div>
+                      <div className='popup-item-shortcut'>{renderItemAccelerator(menuItem)}</div>
                     </button>
                   );
                 })}

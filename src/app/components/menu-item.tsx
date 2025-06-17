@@ -10,13 +10,13 @@ interface IMenuItemProps {
 }
 
 const PopupItem = forwardRef<HTMLDivElement, Partial<IMenuItemProps>>(({ submenu }, ref) => (
-  <div className="menu-popup" ref={ref}>
+  <div className='menu-popup' ref={ref}>
     {submenu?.map((menuItem, menuItemIndex) => {
       if (menuItem.type === 'separator') {
         return (
           <div
             key={`menu_${menuItemIndex}_popup_item_${menuItemIndex + 1}`}
-            className="popup-item-separator"
+            className='popup-item-separator'
           />
         );
       }
@@ -24,14 +24,14 @@ const PopupItem = forwardRef<HTMLDivElement, Partial<IMenuItemProps>>(({ submenu
       return (
         <button
           key={`menu_${menuItemIndex}_popup_item_${menuItemIndex + 1}`}
-          className="menu-popup-item"
+          className='menu-popup-item'
           onMouseDown={(e) => e.preventDefault()}
           onKeyDown={(e) => e.preventDefault()}
-          type="button"
+          type='button'
           tabIndex={0}
         >
-          <div className="popup-item-name">{menuItem.label}</div>
-          <div className="popup-item-shortcut">{menuItem.accelerator}</div>
+          <div className='popup-item-name'>{menuItem.label}</div>
+          <div className='popup-item-shortcut'>{menuItem.accelerator}</div>
         </button>
       );
     })}
@@ -45,16 +45,16 @@ export const MenuItem: React.FC<IMenuItemProps> = ({
   submenu,
   onMenuClick,
   onMenuMouseDown,
-  onMenuMouseEnter,
+  onMenuMouseEnter
 }) => (
-  <div className="menu-item">
+  <div className='menu-item'>
     <button
-      className="menu-title"
+      className='menu-title'
       onClick={onMenuClick}
       onMouseEnter={onMenuMouseEnter}
       onMouseDown={onMenuMouseDown}
       onKeyDown={(e) => e.preventDefault()}
-      type="button"
+      type='button'
       tabIndex={0}
     >
       {label}

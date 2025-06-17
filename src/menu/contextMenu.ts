@@ -1,6 +1,6 @@
-import { ipcRenderer } from 'electron';
-
 import type { ClickHandler } from '@/webContents';
+
+import { ipcRenderer } from 'electron';
 
 export interface IMenuItem {
   readonly id?: string;
@@ -38,7 +38,7 @@ export interface ISerializableMenuItem extends IMenuItem {
   readonly action: undefined;
 }
 
-export async function showContextualMenu(items: ReadonlyArray<IMenuItem>) {
+export async function showContextualMenu (items: ReadonlyArray<IMenuItem>) {
   const indices = await ipcRenderer.invoke('show-contextual-menu', serializeMenuItems(items));
 
   if (indices !== null) {
@@ -54,23 +54,23 @@ export async function showContextualMenu(items: ReadonlyArray<IMenuItem>) {
  * Remove the menu items properties that can't be serializable in
  * order to pass them via IPC.
  */
-function serializeMenuItems(items: ReadonlyArray<IMenuItem>): ReadonlyArray<ISerializableMenuItem> {
+function serializeMenuItems (items: ReadonlyArray<IMenuItem>): ReadonlyArray<ISerializableMenuItem> {
   return items.map((item) => ({
     ...item,
     action: undefined as undefined,
-    submenu: item.submenu ? serializeMenuItems(item.submenu) : undefined,
+    submenu: item.submenu ? serializeMenuItems(item.submenu) : undefined
   }));
 }
 
 /**
  * Traverse the submenus of the context menu until we find the appropriate index.
  */
-function findSubmenuItem(
+function findSubmenuItem (
   currentContextualMenuItems: ReadonlyArray<IMenuItem>,
-  indices: ReadonlyArray<number>,
+  indices: ReadonlyArray<number>
 ): IMenuItem | undefined {
   let foundMenuItem: IMenuItem | undefined = {
-    submenu: currentContextualMenuItems,
+    submenu: currentContextualMenuItems
   };
 
   for (const index of indices) {

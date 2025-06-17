@@ -1,9 +1,9 @@
-import classNames from 'classnames';
-import { useCallback } from 'react';
-
 import ControlButton from '@/app/components/control-button';
 import { MenuChannels } from '@/channels/menuChannels';
 import type { WindowState } from '@/windowState';
+
+import classNames from 'classnames';
+import { useCallback } from 'react';
 
 // These paths are all drawn to a 10x10 view box and replicate the symbols on Windows controls.
 const closePath =
@@ -17,18 +17,18 @@ interface IWindowControlsProps {
   readonly windowState: WindowState;
 }
 
-export default function WindowControls({ windowState }: IWindowControlsProps) {
+export default function WindowControls ({ windowState }: IWindowControlsProps) {
   const executeWindowCommand = useCallback(
     (command: string) => {
       electron.ipcRenderer.invoke(command, windowState);
     },
-    [windowState],
+    [windowState]
   );
 
   return (
     <section className={classNames('window-titlebar-controls', 'type-win32')}>
       <ControlButton
-        name="minimize"
+        name='minimize'
         onClick={() => executeWindowCommand(MenuChannels.WINDOW_MINIMIZE)}
         path={minimizePath}
       />
@@ -38,7 +38,7 @@ export default function WindowControls({ windowState }: IWindowControlsProps) {
         path={windowState === 'maximized' ? restorePath : maximizePath}
       />
       <ControlButton
-        name="close"
+        name='close'
         onClick={() => executeWindowCommand(MenuChannels.WINDOW_CLOSE)}
         path={closePath}
       />

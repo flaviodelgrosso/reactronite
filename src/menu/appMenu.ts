@@ -6,18 +6,18 @@ const MenuItems: Electron.MenuItemConstructorOptions[] = [
     label: 'Reactronite',
     submenu: [
       {
-        label: 'About Reactronite',
+        label: 'About Reactronite'
       },
       {
-        type: 'separator',
+        type: 'separator'
       },
       {
         id: MenuChannels.WINDOW_CLOSE,
         label: 'Exit',
         role: 'quit',
-        accelerator: 'CmdOrCtrl+Q',
-      },
-    ],
+        accelerator: 'CmdOrCtrl+Q'
+      }
+    ]
   },
   {
     label: 'View',
@@ -26,37 +26,37 @@ const MenuItems: Electron.MenuItemConstructorOptions[] = [
         id: MenuChannels.WEB_ACTUAL_SIZE,
         label: 'Reset Zoom',
         role: 'resetZoom',
-        accelerator: 'CmdOrCtrl+0',
+        accelerator: 'CmdOrCtrl+0'
       },
       {
         id: MenuChannels.WEB_ZOOM_IN,
         label: 'Zoom In',
-        role: 'zoomIn',
+        role: 'zoomIn'
       },
       {
         id: MenuChannels.WEB_ZOOM_OUT,
         label: 'Zoom Out',
         role: 'zoomOut',
-        accelerator: 'CmdOrCtrl+-',
+        accelerator: 'CmdOrCtrl+-'
       },
       {
-        type: 'separator',
+        type: 'separator'
       },
       {
         id: MenuChannels.WEB_TOGGLE_FULLSCREEN,
         label: 'Toggle Full Screen',
-        role: 'togglefullscreen',
+        role: 'togglefullscreen'
       },
       {
-        type: 'separator',
+        type: 'separator'
       },
       {
         id: MenuChannels.WEB_TOGGLE_DEVTOOLS,
         label: 'Toogle Developer Tools',
         role: 'toggleDevTools',
-        accelerator: 'CmdOrCtrl+Shift+I',
-      },
-    ],
+        accelerator: 'CmdOrCtrl+Shift+I'
+      }
+    ]
   },
   {
     label: 'Authors',
@@ -64,10 +64,10 @@ const MenuItems: Electron.MenuItemConstructorOptions[] = [
       {
         id: MenuChannels.OPEN_GITHUB_PROFILE,
         label: 'flaviodelgrosso',
-        click: emitEvent(MenuChannels.OPEN_GITHUB_PROFILE, 'flaviodelgrosso'),
-      },
-    ],
-  },
+        click: emitEvent(MenuChannels.OPEN_GITHUB_PROFILE, 'flaviodelgrosso')
+      }
+    ]
+  }
 ];
 
 export default MenuItems;

@@ -2,7 +2,7 @@ import { sendToRenderer } from '@/webContents';
 
 export type WindowState = 'minimized' | 'normal' | 'maximized' | 'full-screen' | 'hidden';
 
-export function getWindowState(window: Electron.BrowserWindow): WindowState {
+export function getWindowState (window: Electron.BrowserWindow): WindowState {
   if (window.isFullScreen()) {
     return 'full-screen';
   }
@@ -22,7 +22,7 @@ export function getWindowState(window: Electron.BrowserWindow): WindowState {
  * Registers event handlers for all window state transition events and
  * forwards those to the renderer process for a given window.
  */
-export function registerWindowStateChangedEvents(window: Electron.BrowserWindow) {
+export function registerWindowStateChangedEvents (window: Electron.BrowserWindow) {
   window.on('enter-full-screen', () => sendWindowStateEvent(window, 'full-screen'));
 
   // So this is a bit of a hack. If we call window.isFullScreen directly after
@@ -45,6 +45,6 @@ export function registerWindowStateChangedEvents(window: Electron.BrowserWindow)
   });
 }
 
-function sendWindowStateEvent(window: Electron.BrowserWindow, state: WindowState) {
+function sendWindowStateEvent (window: Electron.BrowserWindow, state: WindowState) {
   sendToRenderer(window.webContents, 'window-state-changed', state);
 }

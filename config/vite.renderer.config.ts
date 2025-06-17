@@ -1,11 +1,12 @@
-import { type ConfigEnv, defineConfig } from 'vite';
-import svgrPlugin from 'vite-plugin-svgr';
-
 import tailwindcss from '@tailwindcss/vite';
+import { type ConfigEnv, defineConfig } from 'vite';
 import { checker } from 'vite-plugin-checker';
+import svgrPlugin from 'vite-plugin-svgr';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
-import { productName, version } from '../package.json';
+
 import { pluginExposeRenderer } from './vite.base.config';
+
+import { productName, version } from '../package.json';
 
 // https://vitejs.dev/config
 export default defineConfig((env) => {
@@ -18,10 +19,10 @@ export default defineConfig((env) => {
     mode,
     base: './',
     build: {
-      outDir: `.vite/renderer/${name}`,
+      outDir: `.vite/renderer/${name}`
     },
     resolve: {
-      preserveSymlinks: true,
+      preserveSymlinks: true
     },
     clearScreen: false,
     plugins: [
@@ -30,11 +31,11 @@ export default defineConfig((env) => {
       viteTsconfigPaths(),
       checker({
         typescript: true,
-        biome: {
-          command: 'check',
-        },
+        eslint: {
+          lintCommand: 'eslint'
+        }
       }),
-      tailwindcss(),
+      tailwindcss()
     ],
     define: {
       __DARWIN__: process.platform === 'darwin',
@@ -42,7 +43,7 @@ export default defineConfig((env) => {
       __LINUX__: process.platform === 'linux',
       __APP_NAME__: JSON.stringify(productName),
       __APP_VERSION__: JSON.stringify(version),
-      __DEV__: process.env.NODE_ENV === 'development',
-    },
+      __DEV__: process.env.NODE_ENV === 'development'
+    }
   };
 });

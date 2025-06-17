@@ -15,7 +15,7 @@ const ControlButton: React.FC<IControlButtonProps> = ({ name, onClick, path }) =
 
   return (
     <button
-      type="button"
+      type='button'
       aria-label={name}
       className={className}
       onClick={onClick as React.MouseEventHandler<HTMLButtonElement>}
@@ -23,8 +23,8 @@ const ControlButton: React.FC<IControlButtonProps> = ({ name, onClick, path }) =
       title={title}
       tabIndex={0}
     >
-      <svg aria-hidden="true" version="1.1" width="10" height="10">
-        <path fill="currentColor" d={path} />
+      <svg aria-hidden='true' version='1.1' width='10' height='10'>
+        <path fill='currentColor' d={path} />
       </svg>
     </button>
   );

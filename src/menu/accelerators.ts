@@ -1,4 +1,4 @@
-export function getPlatformAcceleratorSymbol(modifier: string) {
+export function getPlatformAcceleratorSymbol (modifier: string) {
   switch (modifier.toLowerCase()) {
     case 'cmdorctrl':
     case 'commandorcontrol':
@@ -29,7 +29,7 @@ export function getPlatformAcceleratorSymbol(modifier: string) {
   return modifier;
 }
 
-export function fixAcceleratorText(accelerator: Electron.Accelerator) {
+export function fixAcceleratorText (accelerator: Electron.Accelerator) {
   return accelerator
     .split('+')
     .map(getPlatformAcceleratorSymbol)

@@ -7,7 +7,7 @@ for (const type of ['chrome', 'node', 'electron']) {
   versions[type] = process.versions[type];
 }
 
-function validateIPC(channel: string) {
+function validateIPC (channel: string) {
   if (!channel) {
     throw new Error(`Unsupported event IPC channel '${channel}'`);
   }
@@ -26,19 +26,19 @@ export const globals = {
    * to support communication to main process.
    */
   ipcRenderer: {
-    send(channel: string, ...args: unknown[]) {
+    send (channel: string, ...args: unknown[]) {
       if (validateIPC(channel)) {
         ipcRenderer.send(channel, ...args);
       }
     },
 
-    invoke(channel: string, ...args: unknown[]) {
+    invoke (channel: string, ...args: unknown[]) {
       if (validateIPC(channel)) {
         return ipcRenderer.invoke(channel, ...args);
       }
     },
 
-    on(channel: string, listener: RendererListener) {
+    on (channel: string, listener: RendererListener) {
       if (validateIPC(channel)) {
         ipcRenderer.on(channel, listener);
 
@@ -46,7 +46,7 @@ export const globals = {
       }
     },
 
-    once(channel: string, listener: RendererListener) {
+    once (channel: string, listener: RendererListener) {
       if (validateIPC(channel)) {
         ipcRenderer.once(channel, listener);
 
@@ -54,14 +54,14 @@ export const globals = {
       }
     },
 
-    removeListener(channel: string, listener: RendererListener) {
+    removeListener (channel: string, listener: RendererListener) {
       if (validateIPC(channel)) {
         ipcRenderer.removeListener(channel, listener);
 
         return this;
       }
-    },
-  },
+    }
+  }
 };
 
 /** Create a safe, bidirectional, synchronous bridge across isolated contexts

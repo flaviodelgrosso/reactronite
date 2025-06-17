@@ -1,11 +1,11 @@
 import path from 'node:path';
-import { BrowserWindow, Menu, app } from 'electron';
-
-import windowStateKeeper from 'electron-window-state';
 
 import { registerMenuIpc } from '@/ipc/menuIPC';
 import appMenu from '@/menu/appMenu';
 import { registerWindowStateChangedEvents } from '@/windowState';
+
+import { BrowserWindow, Menu, app } from 'electron';
+import windowStateKeeper from 'electron-window-state';
 
 let appWindow: BrowserWindow;
 
@@ -13,14 +13,14 @@ let appWindow: BrowserWindow;
  * Create Application Window
  * @returns { BrowserWindow } Application Window Instance
  */
-export function createAppWindow(): BrowserWindow {
+export function createAppWindow (): BrowserWindow {
   const minWidth = 960;
   const minHeight = 660;
 
   const savedWindowState = windowStateKeeper({
     defaultWidth: minWidth,
     defaultHeight: minHeight,
-    maximize: false,
+    maximize: false
   });
 
   const windowOptions: Electron.BrowserWindowConstructorOptions = {
@@ -28,8 +28,8 @@ export function createAppWindow(): BrowserWindow {
     y: savedWindowState.y,
     width: savedWindowState.width,
     height: savedWindowState.height,
-    minWidth: minWidth,
-    minHeight: minHeight,
+    minWidth,
+    minHeight,
     show: false,
     autoHideMenuBar: true,
     frame: false,
@@ -39,8 +39,8 @@ export function createAppWindow(): BrowserWindow {
       contextIsolation: true,
       nodeIntegrationInWorker: false,
       nodeIntegrationInSubFrames: false,
-      preload: path.join(import.meta.dirname, 'preload.js'),
-    },
+      preload: path.join(import.meta.dirname, 'preload.js')
+    }
   };
 
   if (process.platform === 'darwin') {
@@ -55,7 +55,7 @@ export function createAppWindow(): BrowserWindow {
     appWindow.loadURL(MAIN_WINDOW_VITE_DEV_SERVER_URL);
   } else {
     appWindow.loadFile(
-      path.join(import.meta.dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`),
+      path.join(import.meta.dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`)
     );
   }
 
@@ -85,7 +85,7 @@ export function createAppWindow(): BrowserWindow {
 /**
  * Register Inter Process Communication
  */
-function registerMainIPC() {
+function registerMainIPC () {
   /**
    * Here you can assign IPC related codes for the application window
    * to Communicate asynchronously from the main process to renderer processes.

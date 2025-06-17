@@ -45,7 +45,7 @@ The **Reactronite** is your ultimate starting point for creating modern, perform
 
 - **Hot Module Replacement** - Instant updates during development
 - **TypeScript Integration** - Full type safety with excellent IntelliSense support
-- **Code Quality Tools** - Integrated BiomeJS for linting and formatting
+- **Code Quality Tools** - Integrated ESLint and [neostandard](https://github.com/neostandard/neostandard) for linting
 - **Git Hooks** - Automated code quality checks with Husky
 - **Path Mapping** - Clean imports with TypeScript path resolution
 

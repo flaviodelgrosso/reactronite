@@ -11,5 +11,5 @@ export const MenuChannels = {
   OPEN_GITHUB_PROFILE: 'open-github-profile',
   MENU_EVENT: 'menu-event',
   EXECUTE_MENU_ITEM_BY_ID: 'execute-menu-item-by-id',
-  SHOW_CONTEXT_MENU: 'show-context-menu',
+  SHOW_CONTEXT_MENU: 'show-context-menu'
 } as const;

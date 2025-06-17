@@ -1,8 +1,9 @@
-import { useState } from 'react';
-
 import { useRendererListener } from '@/app/hooks';
 import { MenuChannels } from '@/channels/menuChannels';
 import type { WindowState } from '@/windowState';
+
+import { useState } from 'react';
+
 import Menu from './menu';
 import WindowControls from './window-controls';
 
@@ -10,11 +11,11 @@ const handleDoubleClick = () => {
   electron.ipcRenderer.invoke(MenuChannels.WINDOW_TOGGLE_MAXIMIZE);
 };
 
-export default function Titlebar() {
+export default function Titlebar () {
   const [windowState, setWindowState] = useState<WindowState>('normal');
 
   useRendererListener('window-state-changed', (_, windowState: WindowState) =>
-    setWindowState(windowState),
+    setWindowState(windowState)
   );
 
   // Hide titlebar in full screen mode on macOS
@@ -23,7 +24,7 @@ export default function Titlebar() {
   }
 
   return (
-    <div onDoubleClick={handleDoubleClick} className="window-titlebar">
+    <div onDoubleClick={handleDoubleClick} className='window-titlebar'>
       {__WIN32__ && (
         <>
           <Menu />

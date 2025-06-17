@@ -1,7 +1,7 @@
 import { type RefObject, useEffect, useRef } from 'react';
 
 // Window Event based useEventListener interface
-function useEventListener<K extends keyof WindowEventMap>(
+function useEventListener<K extends keyof WindowEventMap> (
   eventName: K,
   handler: (event: WindowEventMap[K]) => void,
   element?: undefined,
@@ -11,8 +11,8 @@ function useEventListener<K extends keyof WindowEventMap>(
 // Element Event based useEventListener interface
 function useEventListener<
   K extends keyof HTMLElementEventMap,
-  T extends HTMLElement = HTMLDivElement,
->(
+  T extends HTMLElement = HTMLDivElement
+> (
   eventName: K,
   handler: (event: HTMLElementEventMap[K]) => void,
   element: RefObject<T>,
@@ -20,7 +20,7 @@ function useEventListener<
 ): void;
 
 // Document Event based useEventListener interface
-function useEventListener<K extends keyof DocumentEventMap>(
+function useEventListener<K extends keyof DocumentEventMap> (
   eventName: K,
   handler: (event: DocumentEventMap[K]) => void,
   element: RefObject<Document>,
@@ -30,12 +30,12 @@ function useEventListener<K extends keyof DocumentEventMap>(
 function useEventListener<
   KW extends keyof WindowEventMap,
   KH extends keyof HTMLElementEventMap,
-  T extends HTMLElement | undefined = undefined,
->(
+  T extends HTMLElement | undefined = undefined
+> (
   eventName: KW | KH,
   handler: (event: WindowEventMap[KW] | HTMLElementEventMap[KH] | Event) => void,
   element?: RefObject<T>,
-  options?: boolean | AddEventListenerOptions,
+  options?: boolean | AddEventListenerOptions
 ) {
   // Create a ref that stores handler
   const savedHandler = useRef(handler);

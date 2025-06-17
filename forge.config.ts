@@ -1,5 +1,6 @@
 import path from 'node:path';
 
+import { FuseV1Options, FuseVersion } from '@electron/fuses';
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerRpm } from '@electron-forge/maker-rpm';
 import { MakerSquirrel } from '@electron-forge/maker-squirrel';
@@ -7,7 +8,6 @@ import { MakerZIP } from '@electron-forge/maker-zip';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { VitePlugin } from '@electron-forge/plugin-vite';
 import type { ForgeConfig } from '@electron-forge/shared-types';
-import { FuseV1Options, FuseVersion } from '@electron/fuses';
 
 import { author, productName } from './package.json';
 
@@ -22,14 +22,14 @@ const config: ForgeConfig = {
     // Set application copyright
     appCopyright: `Copyright © ${new Date().getFullYear()} ${author.name}`,
     // Set application icon
-    icon: path.resolve(rootDir, 'assets/icons/icon'),
+    icon: path.resolve(rootDir, 'assets/icons/icon')
   },
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({ name: productName }),
     new MakerZIP({}, ['darwin']),
     new MakerRpm({}),
-    new MakerDeb({}),
+    new MakerDeb({})
   ],
   plugins: [
     new VitePlugin({
@@ -39,19 +39,19 @@ const config: ForgeConfig = {
         {
           // `entry` is just an alias for `build.lib.entry` in the corresponding file of `config`.
           entry: 'src/main.ts',
-          config: 'config/vite.main.config.ts',
+          config: 'config/vite.main.config.ts'
         },
         {
           entry: 'src/preload.ts',
-          config: 'config/vite.preload.config.ts',
-        },
+          config: 'config/vite.preload.config.ts'
+        }
       ],
       renderer: [
         {
           name: 'main_window',
-          config: 'config/vite.renderer.config.ts',
-        },
-      ],
+          config: 'config/vite.renderer.config.ts'
+        }
+      ]
     }),
     // Fuses are used to enable/disable various Electron functionality
     // at package time, before code signing the application
@@ -62,9 +62,9 @@ const config: ForgeConfig = {
       [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
       [FuseV1Options.EnableNodeCliInspectArguments]: false,
       [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
-      [FuseV1Options.OnlyLoadAppFromAsar]: true,
-    }),
-  ],
+      [FuseV1Options.OnlyLoadAppFromAsar]: true
+    })
+  ]
 };
 
 export default config;
