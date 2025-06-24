@@ -27,7 +27,8 @@ export default defineConfig((env) => {
       checker({
         typescript: true,
         eslint: {
-          lintCommand: 'eslint'
+          lintCommand: 'eslint',
+          useFlatConfig: true
         }
       })
     ],
