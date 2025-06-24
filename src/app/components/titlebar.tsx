@@ -14,9 +14,7 @@ const handleDoubleClick = () => {
 export default function Titlebar () {
   const [windowState, setWindowState] = useState<WindowState>('normal');
 
-  useRendererListener('window-state-changed', (_, windowState: WindowState) =>
-    setWindowState(windowState)
-  );
+  useRendererListener('window-state-changed', (_, windowState: WindowState) => setWindowState(windowState));
 
   // Hide titlebar in full screen mode on macOS
   if (windowState === 'full-screen' && __DARWIN__) {

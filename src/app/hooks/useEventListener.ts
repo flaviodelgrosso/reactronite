@@ -60,7 +60,11 @@ function useEventListener<
     return () => {
       targetElement.removeEventListener(eventName, eventListener);
     };
-  }, [eventName, element, options]);
+  }, [
+    eventName,
+    element,
+    options
+  ]);
 }
 
 export { useEventListener };
