@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/flaviodelgrosso/reactronite/compare/v2.2.2...v2.3.0) (2025-06-24)
+
+
+### Features
+
+* **deps:** upgrade to vite 7 and electron 37 ([9216714](https://github.com/flaviodelgrosso/reactronite/commit/9216714301d102c804b205c6d372248651deb4aa))
+
+
+### Bug Fixes
+
+* enable useFlatConfig in vite-plugin-checker config to support ESLint 9 flat config ([30dbf7b](https://github.com/flaviodelgrosso/reactronite/commit/30dbf7bf2872a15de1103e2b172550dad7cf4e43))
+
 ### [2.2.2](https://github.com/flaviodelgrosso/reactronite/compare/v2.2.1...v2.2.2) (2025-06-17)
 
 

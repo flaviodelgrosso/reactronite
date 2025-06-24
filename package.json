@@ -1,7 +1,7 @@
 {
   "name": "reactronite",
   "productName": "Reactronite",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "A modern, feature-rich Electron kit for building cross-platform desktop applications",
   "main": ".vite/build/main.js",
   "license": "MIT",
