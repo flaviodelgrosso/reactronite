@@ -51,7 +51,7 @@
     "clsx": "^2.1.1",
     "electron-squirrel-startup": "^1.0.1",
     "electron-window-state": "^5.0.3",
-    "lucide-react": "^0.536.0",
+    "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.7.1",
