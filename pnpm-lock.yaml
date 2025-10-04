@@ -142,8 +142,8 @@ importers:
         specifier: ^7.0.6
         version: 7.1.9(@types/node@24.0.4)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
       vite-plugin-checker:
-        specifier: ^0.10.2
-        version: 0.10.3(eslint@9.37.0(jiti@2.6.1))(optionator@0.9.4)(typescript@5.9.3)(vite@7.1.9(@types/node@24.0.4)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))
+        specifier: ^0.11.0
+        version: 0.11.0(eslint@9.37.0(jiti@2.6.1))(optionator@0.9.4)(typescript@5.9.3)(vite@7.1.9(@types/node@24.0.4)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))
       vite-plugin-svgr:
         specifier: 4.5.0
         version: 4.5.0(rollup@4.44.0)(typescript@5.9.3)(vite@7.1.9(@types/node@24.0.4)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))
@@ -2628,14 +2628,6 @@ packages:
   fd-slicer@1.1.0:
     resolution: {integrity: sha512-cE1qsB/VwyQozZ+q1dGxR8LBYNZeofhEdUNGSMbQD3Gw2lAzX9Zb3uIU6Ebc/Fmyjo9AWWfnn0AUCHqtevs/8g==}
 
-  fdir@6.4.6:
-    resolution: {integrity: sha512-hiFoqpyZcfNm1yc4u8oWCf9A2c4D3QjCrks3zmoVKVxpQRzmPNar1hUJcBG2RQHvEVGDN+Jm81ZheVLAQMK6+w==}
-    peerDependencies:
-      picomatch: ^3 || ^4
-    peerDependenciesMeta:
-      picomatch:
-        optional: true
-
   fdir@6.5.0:
     resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
     engines: {node: '>=12.0.0'}
@@ -3919,10 +3911,6 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
-  picomatch@4.0.2:
-    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
-    engines: {node: '>=12'}
-
   picomatch@4.0.3:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
@@ -4561,10 +4549,6 @@ packages:
   tinyexec@1.0.1:
     resolution: {integrity: sha512-5uC6DDlmeqiOwCPmK9jMSdOuZTh8bU39Ys6yidB+UTt5hfZUPGAypSgFRiEp+jbi9qH40BLDvy85jIU88wKSqw==}
 
-  tinyglobby@0.2.14:
-    resolution: {integrity: sha512-tX5e7OM1HnYr2+a2C/4V0htOcSQcoSTH9KgJnVvNm5zm/cyEWKJ7j7YutsH9CxMdtOkkLFy2AHrMci9IM8IPZQ==}
-    engines: {node: '>=12.0.0'}
-
   tinyglobby@0.2.15:
     resolution: {integrity: sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==}
     engines: {node: '>=12.0.0'}
@@ -4782,17 +4766,18 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  vite-plugin-checker@0.10.3:
-    resolution: {integrity: sha512-f4sekUcDPF+T+GdbbE8idb1i2YplBAoH+SfRS0e/WRBWb2rYb1Jf5Pimll0Rj+3JgIYWwG2K5LtBPCXxoibkLg==}
-    engines: {node: '>=14.16'}
+  vite-plugin-checker@0.11.0:
+    resolution: {integrity: sha512-iUdO9Pl9UIBRPAragwi3as/BXXTtRu4G12L3CMrjx+WVTd9g/MsqNakreib9M/2YRVkhZYiTEwdH2j4Dm0w7lw==}
+    engines: {node: '>=16.11'}
     peerDependencies:
       '@biomejs/biome': '>=1.7'
       eslint: '>=7'
       meow: ^13.2.0
       optionator: ^0.9.4
+      oxlint: '>=1'
       stylelint: '>=16'
       typescript: '*'
-      vite: '>=2.0.0'
+      vite: '>=5.4.20'
       vls: '*'
       vti: '*'
       vue-tsc: ~2.2.10 || ^3.0.0
@@ -4804,6 +4789,8 @@ packages:
       meow:
         optional: true
       optionator:
+        optional: true
+      oxlint:
         optional: true
       stylelint:
         optional: true
@@ -6342,7 +6329,7 @@ snapshots:
       eslint-visitor-keys: 4.2.1
       espree: 10.4.0
       estraverse: 5.3.0
-      picomatch: 4.0.2
+      picomatch: 4.0.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -7776,7 +7763,7 @@ snapshots:
       get-tsconfig: 4.10.1
       is-bun-module: 2.0.0
       stable-hash: 0.0.5
-      tinyglobby: 0.2.14
+      tinyglobby: 0.2.15
       unrs-resolver: 1.9.2
     optionalDependencies:
       eslint-plugin-import-x: 4.16.1(@typescript-eslint/utils@8.38.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1))
@@ -7975,10 +7962,6 @@ snapshots:
   fd-slicer@1.1.0:
     dependencies:
       pend: 1.2.0
-
-  fdir@6.4.6(picomatch@4.0.3):
-    optionalDependencies:
-      picomatch: 4.0.3
 
   fdir@6.5.0(picomatch@4.0.3):
     optionalDependencies:
@@ -9280,8 +9263,6 @@ snapshots:
 
   picomatch@2.3.1: {}
 
-  picomatch@4.0.2: {}
-
   picomatch@4.0.3: {}
 
   pidtree@0.6.0: {}
@@ -9978,11 +9959,6 @@ snapshots:
 
   tinyexec@1.0.1: {}
 
-  tinyglobby@0.2.14:
-    dependencies:
-      fdir: 6.4.6(picomatch@4.0.3)
-      picomatch: 4.0.3
-
   tinyglobby@0.2.15:
     dependencies:
       fdir: 6.5.0(picomatch@4.0.3)
@@ -10018,7 +9994,7 @@ snapshots:
 
   ts-declaration-location@1.0.7(typescript@5.9.3):
     dependencies:
-      picomatch: 4.0.2
+      picomatch: 4.0.3
       typescript: 5.9.3
 
   ts-node@10.9.2(@types/node@24.0.4)(typescript@5.9.3):
@@ -10211,16 +10187,15 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite-plugin-checker@0.10.3(eslint@9.37.0(jiti@2.6.1))(optionator@0.9.4)(typescript@5.9.3)(vite@7.1.9(@types/node@24.0.4)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)):
+  vite-plugin-checker@0.11.0(eslint@9.37.0(jiti@2.6.1))(optionator@0.9.4)(typescript@5.9.3)(vite@7.1.9(@types/node@24.0.4)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)):
     dependencies:
       '@babel/code-frame': 7.27.1
       chokidar: 4.0.3
       npm-run-path: 6.0.0
       picocolors: 1.1.1
       picomatch: 4.0.3
-      strip-ansi: 7.1.0
       tiny-invariant: 1.3.3
-      tinyglobby: 0.2.14
+      tinyglobby: 0.2.15
       vite: 7.1.9(@types/node@24.0.4)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
       vscode-uri: 3.1.0
     optionalDependencies:
