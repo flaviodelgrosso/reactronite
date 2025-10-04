@@ -5,7 +5,7 @@
   "description": "A modern, feature-rich Electron kit for building cross-platform desktop applications",
   "main": ".vite/build/main.js",
   "license": "MIT",
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.18.0",
   "type": "module",
   "keywords": [
     "electron",
