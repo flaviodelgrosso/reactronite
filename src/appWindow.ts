@@ -20,7 +20,7 @@ export function createAppWindow (): BrowserWindow {
   const savedWindowState = windowStateKeeper({
     defaultWidth: minWidth,
     defaultHeight: minHeight,
-    maximize: false
+    maximize: false,
   });
 
   const windowOptions: Electron.BrowserWindowConstructorOptions = {
@@ -39,8 +39,8 @@ export function createAppWindow (): BrowserWindow {
       contextIsolation: true,
       nodeIntegrationInWorker: false,
       nodeIntegrationInSubFrames: false,
-      preload: path.join(import.meta.dirname, 'preload.js')
-    }
+      preload: path.join(import.meta.dirname, 'preload.js'),
+    },
   };
 
   if (process.platform === 'darwin') {

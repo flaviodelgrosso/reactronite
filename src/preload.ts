@@ -3,11 +3,7 @@ import { type IpcRendererEvent, contextBridge, ipcRenderer } from 'electron';
 const versions: Record<string, unknown> = {};
 
 // Process versions
-for (const type of [
-  'chrome',
-  'node',
-  'electron'
-]) {
+for (const type of ['chrome', 'node', 'electron']) {
   versions[type] = process.versions[type];
 }
 
@@ -64,8 +60,8 @@ export const globals = {
 
         return this;
       }
-    }
-  }
+    },
+  },
 };
 
 // Create a safe, bidirectional, synchronous bridge across isolated contexts

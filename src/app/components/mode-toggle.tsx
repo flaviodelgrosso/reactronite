@@ -4,7 +4,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from '@/app/components/ui/dropdown-menu';
 
 import { Moon, Sun } from 'lucide-react';

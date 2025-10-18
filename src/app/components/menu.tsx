@@ -5,6 +5,7 @@ import menuList from '@/menu/appMenu';
 import appLogo from 'assets/icons/icon.png';
 
 import { createRef, useMemo, useRef } from 'react';
+
 import type React from 'react';
 
 export default function Menu () {
@@ -31,10 +32,7 @@ export default function Menu () {
     }
   };
 
-  const showMenu = (
-    index: number,
-    e: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>
-  ) => {
+  const showMenu = (index: number, e: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     e.preventDefault();
 
@@ -117,10 +115,7 @@ export default function Menu () {
                 submenu.map((menuItem, menuItemIndex) => {
                   if (menuItem.type === 'separator') {
                     return (
-                      <div
-                        key={`menu_${menuIndex}_popup_item_${menuItemIndex + 1}`}
-                        className='popup-item-separator'
-                      />
+                      <div key={`menu_${menuIndex}_popup_item_${menuItemIndex + 1}`} className='popup-item-separator' />
                     );
                   }
 

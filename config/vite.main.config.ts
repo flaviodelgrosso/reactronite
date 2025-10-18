@@ -1,9 +1,10 @@
-import type { ConfigEnv, UserConfig } from 'vite';
 import { defineConfig, mergeConfig } from 'vite';
 import { checker } from 'vite-plugin-checker';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 
 import { external, getBuildConfig, getBuildDefine, pluginHotRestart } from './vite.base.config';
+
+import type { ConfigEnv, UserConfig } from 'vite';
 
 // https://vitejs.dev/config
 export default defineConfig((env) => {

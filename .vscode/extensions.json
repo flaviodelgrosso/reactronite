@@ -1,7 +1,6 @@
 {
   "recommendations": [
-    "usernamehw.errorlens",
-    "meganrogge.template-string-converter",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
   ]
 }

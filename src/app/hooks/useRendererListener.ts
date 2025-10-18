@@ -1,6 +1,6 @@
-import type { RendererListener } from '@/preload';
-
 import { useEffect } from 'react';
+
+import type { RendererListener } from '@/preload';
 
 export const useRendererListener = (channel: string, listener: RendererListener) => {
   useEffect(() => {

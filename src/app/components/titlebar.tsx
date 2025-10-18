@@ -1,11 +1,12 @@
 import { useRendererListener } from '@/app/hooks';
 import { MenuChannels } from '@/channels/menuChannels';
-import type { WindowState } from '@/windowState';
 
 import { useState } from 'react';
 
 import Menu from './menu';
 import WindowControls from './window-controls';
+
+import type { WindowState } from '@/windowState';
 
 const handleDoubleClick = () => {
   electron.ipcRenderer.invoke(MenuChannels.WINDOW_TOGGLE_MAXIMIZE);

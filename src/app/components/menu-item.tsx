@@ -1,5 +1,6 @@
-import type React from 'react';
 import { forwardRef } from 'react';
+
+import type React from 'react';
 
 interface IMenuItemProps {
   label: string;
@@ -13,12 +14,7 @@ const PopupItem = forwardRef<HTMLDivElement, Partial<IMenuItemProps>>(({ submenu
   <div className='menu-popup' ref={ref}>
     {submenu?.map((menuItem, menuItemIndex) => {
       if (menuItem.type === 'separator') {
-        return (
-          <div
-            key={`menu_${menuItemIndex}_popup_item_${menuItemIndex + 1}`}
-            className='popup-item-separator'
-          />
-        );
+        return <div key={`menu_${menuItemIndex}_popup_item_${menuItemIndex + 1}`} className='popup-item-separator' />;
       }
 
       return (
@@ -45,7 +41,7 @@ export const MenuItem: React.FC<IMenuItemProps> = ({
   submenu,
   onMenuClick,
   onMenuMouseDown,
-  onMenuMouseEnter
+  onMenuMouseEnter,
 }) => (
   <div className='menu-item'>
     <button

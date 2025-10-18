@@ -1,9 +1,9 @@
 import { builtinModules } from 'node:module';
-import type { AddressInfo } from 'node:net';
-
-import type { ConfigEnv, Plugin, UserConfig } from 'vite';
 
 import pkg from '../package.json';
+
+import type { AddressInfo } from 'node:net';
+import type { ConfigEnv, Plugin, UserConfig } from 'vite';
 
 export const builtins = ['electron', ...builtinModules.flatMap((m) => [m, `node:${m}`])];
 

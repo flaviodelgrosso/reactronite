@@ -1,11 +1,10 @@
 import classNames from 'classnames';
+
 import type React from 'react';
 
 interface IControlButtonProps {
   name: string;
-  onClick:
-    | React.MouseEventHandler<HTMLButtonElement>
-    | React.KeyboardEventHandler<HTMLButtonElement>;
+  onClick: React.MouseEventHandler<HTMLButtonElement> | React.KeyboardEventHandler<HTMLButtonElement>;
   path: string;
 }
 

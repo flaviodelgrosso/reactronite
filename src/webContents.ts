@@ -5,7 +5,7 @@ import type { WebContents } from 'electron';
 export type ClickHandler = (
   menuItem: Electron.MenuItem,
   browserWindow: Electron.BrowserWindow | undefined,
-  event: Electron.KeyboardEvent,
+  event: Electron.KeyboardEvent
 ) => void;
 
 export function emitEvent (eventName: string, ...args: unknown[]): ClickHandler {
@@ -17,11 +17,7 @@ export function emitEvent (eventName: string, ...args: unknown[]): ClickHandler 
   };
 }
 
-export function sendToRenderer (
-  webContents: WebContents,
-  channel: string,
-  ...args: unknown[]
-): void {
+export function sendToRenderer (webContents: WebContents, channel: string, ...args: unknown[]): void {
   if (webContents.isDestroyed()) {
     const msg = `failed to send on ${channel}, webContents was destroyed`;
     if (__DEV__) {

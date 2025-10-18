@@ -1,6 +1,6 @@
-import type { ClickHandler } from '@/webContents';
-
 import { ipcRenderer } from 'electron';
+
+import type { ClickHandler } from '@/webContents';
 
 export interface IMenuItem {
   readonly id?: string;
@@ -58,7 +58,7 @@ function serializeMenuItems (items: ReadonlyArray<IMenuItem>): ReadonlyArray<ISe
   return items.map((item) => ({
     ...item,
     action: undefined as undefined,
-    submenu: item.submenu ? serializeMenuItems(item.submenu) : undefined
+    submenu: item.submenu ? serializeMenuItems(item.submenu) : undefined,
   }));
 }
 
@@ -70,7 +70,7 @@ function findSubmenuItem (
   indices: ReadonlyArray<number>
 ): IMenuItem | undefined {
   let foundMenuItem: IMenuItem | undefined = {
-    submenu: currentContextualMenuItems
+    submenu: currentContextualMenuItems,
   };
 
   for (const index of indices) {
